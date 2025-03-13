@@ -1,8 +1,10 @@
-import express from "express";
-import productRouter from "./routes/products/route";
+import express, { json, urlencoded } from "express";
+import productRouter from "./routes/products.route";
 
-const app = express();
 const port = 3000;
+const app = express();
+app.use(urlencoded({ extended: false }));
+app.use(express.json());
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
