@@ -4,17 +4,26 @@
   "type": "module",
   "scripts": {
     "dev": "node --import=tsx --env-file=.env --watch src/index.ts",
-    "build": "tsc src/index"
+    "build": "tsc src/index",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:push": "drizzle-kit push",
+    "db:sync": "drizzle-kit sync"
   },
   "devDependencies": {
     "@types/bun": "latest",
     "@types/express": "^5.0.0",
+    "@types/pg": "^8.11.11",
+    "drizzle-kit": "^0.30.5",
     "tsx": "^4.19.3"
   },
   "peerDependencies": {
     "typescript": "^5.8.2"
   },
   "dependencies": {
-    "express": "^4.21.2"
+    "@genezio/types": "^1.0.20",
+    "drizzle-orm": "^0.40.0",
+    "express": "^4.21.2",
+    "pg": "^8.14.0"
   }
 }
