@@ -10,7 +10,7 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-app.use("/products", productRouter);
+app.use("/api/v1", productRouter);
 
 app.listen(port, () => {
   console.log(`App listening on port ${port}`);
